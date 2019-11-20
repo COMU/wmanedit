@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/static/css/run.css"/>
+		<script src="/static/js/run.js"></script>
+
+
+	</head>
+
+	<body>
+
+			<div class="rows">
+				<div class="title">
+					<h2>{{ title }}</h2>
+				</div>
+				<div class="sidebar-heading"><strong>BÖLÜMLER</strong></div>
+				<div  id="bolumler" class="col-lg-2">
+        	<button class="ql-name" data-toggle="tooltip" data-placement="bottom" title="Name Bölümü Ekler" >NAME</button>
+					<button class="ql-synopsis" data-toggle="tooltip" data-placement="bottom" title="Synopsis Bölümü Ekler" >SYNOPSIS</button>
+					<button class="ql-description" data-toggle="tooltip" data-placement="bottom" title="Description Bölümü Ekler" >DESCRIPTION</button>
+					<button class="ql-options" data-toggle="tooltip" data-placement="bottom" title="Options Bölümü Ekler" >OPTIONS</button>
+					<button class="ql-files" data-toggle="tooltip" data-placement="bottom" title="Files Bölümü Ekler" >FILES</button>
+					<button class="ql-environment" data-toggle="tooltip" data-placement="bottom" title="Environment Bölümü Ekler" >ENVIRONMENT</button>
+					<button class="ql-diognastics" data-toggle="tooltip" data-placement="bottom" title="Diognastics Bölümü Ekler" >DIOGNASTICS</button>
+					<button class="ql-bugs" data-toggle="tooltip" data-placement="bottom" title="Bugs Bölümü Ekler" >BUGS</button>
+					<button class="ql-author" data-toggle="tooltip" data-placement="bottom" title="Author Bölümü Ekler" >AUTHOR</button>
+					<button class="ql-seealso" data-toggle="tooltip" data-placement="bottom" title="See Also Bölümü Ekler" >SEE ALSO</button>
+				</div>
+
+				<div class="col-lg-4" id="content-container">
+					<div id="toolbar-container">
+   					<button class="ql-bold" data-toggle="tooltip" data-placement="bottom" title="Bold"/>
+   					<button class="ql-underline" title="Underline"/>
+						<button class="ql-indent" value="-1" type="button" title="Sil Girinti"/>
+						<button class="ql-indent" value="+1" type="button" title="Koy Girinti"/>
+						<span class="ql-formats">
+          		<button class="ql-yorumsatiri" data-toggle="tooltip" data-placement="bottom" title="Yorum satırı eklemenizi sağlar." ><strong>.\</strong></button>
+    			 	</span>
+					</div>
+					<div id="editor-container"></div>
+				</div>
+
+				<div class="col-lg-4" id="ornek">
+					<strong>NAME</strong>
+						<p>
+							The NAME section is the only required section. Man pages without a name section are as useful as refrigerators at the north pole.
+							This section also has a standardized format consisting of a comma-separated list of program or function names, followed by a dash,
+							followed by a short (usually one line) description of the functionality the program (or function, or file) is supposed to provide.
+						</p>
+					<strong>SYNOPSIS</strong>
+					<p>
+						The SYNOPSIS section is intended to give a short overview on available program options.
+						For functions this sections lists corresponding include files and the prototype so the programmer knows
+						the type and number of arguments as well as the return type.
+					</p>
+					<strong>DESCRIPTION</strong>
+					<p>
+						The DESCRIPTION section eloquently explains why your sequence of 0s and 1s is worth anything at all.
+						Here's where you write down all your knowledge. This is the Hall Of Fame. Win other programmers' and users' admiration
+						by making this section the source of reliable and detailed information. Explain what the arguments are for, the file format,
+						what algorithms do the dirty jobs.
+					</p>
+					<strong>OPTIONS</strong>
+					<p>
+						The OPTIONS section gives a description of how each option affects program behaviour.
+					</p>
+					<strong>FILES</strong>
+					<p>
+						The FILES section lists files the program or function uses.
+						For example, it lists configuration files, startup files, and files the program directly operates on.
+					</p>
+					<strong>ENVIRONMENT</strong>
+					<p>
+						The ENVIRONMENT section lists all environment variables that affect your program or function and tells how, of course.
+						Most commonly the variables will hold pathnames, filenames or default options.
+					</p>
+					<strong>DIOGNASTICS</strong>
+					<p>
+						The DIAGNOSTICS section should give an overview of the most common error messages from your program and how to cope with them.
+					</p>
+					<strong>BUGS</strong>
+					<p>
+						The BUGS section should ideally be non-existent.
+						If you're brave, you can describe here the limitations, known inconveniences and features that others may regard as misfeatures.
+					</p>
+					<strong>AUTHOR</strong>
+					<p>
+						The AUTHOR section is nice to have in case there are gross errors in the documentation or program behaviour and you want to mail a bug report.
+					</p>
+					<strong>SEE ALSO</strong>
+					<p>
+						The SEE ALSO section is a list of related man pages in alphabetical order. Conventionally, it is the last section.
+						You are free to invent other sections if they really don't fit in one of those described so far.
+					</p>
+				</div>
+			</div>
+
+			<div class="form">
+				<form method="POST" id="form">
+					<div class="first">
+						<div>
+	          	{{ form.content(class_="content_size") }}
+	        	</div>
+					</div>
+					<div class="button">
+						File Name: {{ form.file_name(class_="file_name_size") }}
+						{{ form.kategori(class_="kategori_size") }}
+						<input type="submit" value="INSTALL" id="install"/>
+					</div>
+				</form>
+			</div>
+
+				<!-- <div class="footer">
+					Man Page Editor
+				</div> -->
+  </body>
+
+</html>

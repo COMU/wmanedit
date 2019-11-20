@@ -1,0 +1,119 @@
+ .title{
+   text-align: center;
+ }
+
+ #content-container {
+   width: 600px;
+   margin-right: 30px;
+   margin-bottom: 15px !important;
+ }
+ #editor-container {
+   height: 400px;
+ }
+
+ .ql-boldunderline:after {
+   content: "Title";
+   font-weight: bold;
+ }
+
+ .first{
+   display: none;
+ }
+
+ #ornek{
+   border : 2px solid lightgrey;
+   height: 442px;
+   overflow-y: scroll;
+   padding: 5px 5px 5px 5px;
+ }
+
+ body {
+   overflow-x: hidden;
+ }
+
+ #sidebar-wrapper {
+   min-height: 100vh;
+   margin-left: -15rem;
+   -webkit-transition: margin .25s ease-out;
+   -moz-transition: margin .25s ease-out;
+   -o-transition: margin .25s ease-out;
+   transition: margin .25s ease-out;
+ }
+
+ #sidebar-wrapper .sidebar-heading {
+   padding: 0.875rem 1.2rem;
+   font-size: 1.5rem;
+ }
+
+ #sidebar-wrapper .list-group {
+   width: 20rem;
+ }
+
+ #page-content-wrapper {
+   min-width: 100vw;
+ }
+
+ #wrapper.toggled #sidebar-wrapper {
+   margin-left: 0;
+ }
+
+ @media (min-width: 768px) {
+   #sidebar-wrapper {
+     margin-left: 0;
+   }
+
+   #page-content-wrapper {
+     min-width: 0;
+     width: 100%;
+   }
+
+   #wrapper.toggled #sidebar-wrapper {
+     margin-left: -15rem;
+   }
+ }
+
+ .list-group-item list-group-item-action bg-light{
+   height: 5px !important;
+ }
+
+ #bolumler{
+   margin-right: 30px;
+   height: 500px !important;
+   position: sticky;
+   overflow-y: scroll !important;
+ }
+
+ #bolumler button{
+   width: 185px !important;
+   margin-bottom: 10px;
+ }
+
+ .sidebar-heading{
+   margin-bottom: 10px;
+   margin-left: 45px;
+ }
+
+ .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+  }
+
+  .rows{
+    margin-bottom: 470px !important;
+  }
+
+.button file_name_size{
+  margin-top: 20px;
+  position: absolute;
+  float: left !important;
+}
+
+.button kategori_size{
+  position: relative;
+  float: left !important;
+}
